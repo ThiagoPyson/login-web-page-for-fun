@@ -1,0 +1,216 @@
+:root {
+    --primary-color: #9b4dff;
+    --secondary-color: #6a1b9a;
+    --accent-color: #b388ff;
+    --text-color: #e0e0e0;
+    --error-color: #ff4081;
+    --success-color: #00e676;
+    --background-gradient: linear-gradient(135deg, rgba(38, 12, 61, 0.95), rgba(72, 12, 168, 0.90));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: url('https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background-gradient);
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.terms-box {
+    background: rgba(13, 13, 17, 0.95);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(155, 77, 255, 0.3);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.terms-header {
+    background: rgba(155, 77, 255, 0.1);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(155, 77, 255, 0.2);
+}
+
+.terms-header h2 {
+    color: var(--text-color);
+    font-size: 1.8em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: var(--error-color);
+    transform: scale(1.1);
+}
+
+.terms-content {
+    padding: 30px;
+    max-height: 60vh;
+    overflow-y: auto;
+    color: var(--text-color);
+}
+
+.terms-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terms-content::-webkit-scrollbar-track {
+    background: rgba(155, 77, 255, 0.1);
+}
+
+.terms-content::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+.section {
+    margin-bottom: 30px;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.section h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.section p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.section ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.section ul li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.section ul li::before {
+    content: '•';
+    color: var(--primary-color);
+    position: absolute;
+    left: -20px;
+}
+
+.terms-footer {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    background: rgba(155, 77, 255, 0.1);
+    border-top: 1px solid rgba(155, 77, 255, 0.2);
+}
+
+.accept-btn, .decline-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.accept-btn {
+    background: var(--primary-color);
+    color: white;
+}
+
+.accept-btn:hover {
+    background: var(--success-color);
+    transform: translateY(-2px);
+}
+
+.decline-btn {
+    background: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+}
+
+.decline-btn:hover {
+    background: var(--error-color);
+    color: white;
+    border-color: var(--error-color);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .terms-header h2 {
+        font-size: 1.5em;
+    }
+
+    .terms-content {
+        padding: 20px;
+    }
+
+    .terms-footer {
+        flex-direction: column;
+    }
+
+    .accept-btn, .decline-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
