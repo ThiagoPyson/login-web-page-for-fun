@@ -1,0 +1,239 @@
+:root {
+    --primary-color: #9b4dff;
+    --secondary-color: #6a1b9a;
+    --accent-color: #b388ff;
+    --text-color: #e0e0e0;
+    --error-color: #ff4081;
+    --success-color: #00e676;
+    --background-gradient: linear-gradient(135deg, rgba(38, 12, 61, 0.95), rgba(72, 12, 168, 0.90));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: url('https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background-gradient);
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+.login-box {
+    background: rgba(13, 13, 17, 0.95);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 0 30px rgba(155, 77, 255, 0.3),
+                0 0 60px rgba(155, 77, 255, 0.1);
+    border: 1px solid rgba(155, 77, 255, 0.2);
+    animation: boxGlow 3s infinite alternate;
+}
+
+@keyframes boxGlow {
+    0% {
+        box-shadow: 0 0 30px rgba(155, 77, 255, 0.3),
+                    0 0 60px rgba(155, 77, 255, 0.1);
+    }
+    100% {
+        box-shadow: 0 0 40px rgba(155, 77, 255, 0.4),
+                    0 0 80px rgba(155, 77, 255, 0.2);
+    }
+}
+
+h2 {
+    color: var(--text-color);
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--text-color);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #555;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #666;
+    pointer-events: none;
+    transition: 0.3s ease-out;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+    top: -20px;
+    font-size: 12px;
+    color: var(--primary-color);
+    text-shadow: 0 0 5px var(--primary-color);
+}
+
+.input-group input:focus {
+    border-bottom: 2px solid var(--primary-color);
+    box-shadow: 0 1px 0 var(--primary-color);
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.remember-forgot label {
+    color: var(--text-color);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.remember-forgot input[type="checkbox"] {
+    margin-right: 5px;
+    accent-color: var(--primary-color);
+}
+
+.remember-forgot a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.remember-forgot a:hover {
+    text-shadow: 0 0 5px var(--primary-color);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(155, 77, 255, 0.4);
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-link p {
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+.register-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.register-link a:hover {
+    text-shadow: 0 0 5px var(--primary-color);
+}
+
+.shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .login-box {
+        padding: 20px;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+}

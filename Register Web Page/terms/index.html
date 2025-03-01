@@ -1,0 +1,85 @@
+<<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Uso - Test Fun</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Corrigido aqui -->
+</head>
+<body>
+    <div class="container">
+        <div class="terms-box">
+            <div class="terms-header">
+                <h2><i class="fas fa-scroll"></i> Termos de Uso</h2>
+                <button class="close-btn" onclick="window.close()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="terms-content">
+                <div class="section">
+                    <h3>1. Aceitação dos Termos</h3>
+                    <p>Ao acessar e usar nossa plataforma, você concorda com estes termos de uso. Se não concordar, não use o serviço.</p>
+                </div>
+
+                <div class="section">
+                    <h3>2. Conta do Usuário</h3>
+                    <ul>
+                        <li>Você é responsável por manter a confidencialidade da sua senha</li>
+                        <li>Suas informações devem ser verdadeiras e precisas</li>
+                        <li>É proibido usar contas falsas ou se passar por outras pessoas</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3>3. Conduta do Usuário</h3>
+                    <p>Você concorda em não:</p>
+                    <ul>
+                        <li>Usar linguagem ofensiva ou inadequada</li>
+                        <li>Postar conteúdo ilegal ou prejudicial</li>
+                        <li>Tentar acessar áreas restritas do sistema</li>
+                        <li>Compartilhar vírus ou código malicioso</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3>4. Privacidade</h3>
+                    <p>Seus dados são protegidos conforme nossa política de privacidade. Coletamos apenas o necessário para o funcionamento do serviço.</p>
+                </div>
+
+                <div class="section">
+                    <h3>5. Conteúdo</h3>
+                    <ul>
+                        <li>Todo conteúdo postado é de sua responsabilidade</li>
+                        <li>Reservamos o direito de remover conteúdo inadequado</li>
+                        <li>Não nos responsabilizamos por conteúdo de usuários</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3>6. Modificações</h3>
+                    <p>Podemos alterar estes termos a qualquer momento. Mudanças significativas serão notificadas.</p>
+                </div>
+
+                <div class="section">
+                    <h3>7. Cancelamento</h3>
+                    <p>Você pode cancelar sua conta a qualquer momento. Reservamos o direito de suspender contas que violem os termos.</p>
+                </div>
+            </div>
+
+            <div class="terms-footer">
+                <button class="accept-btn" onclick="acceptTerms()">
+                    <i class="fas fa-check"></i>
+                    Aceito os Termos
+                </button>
+                <button class="decline-btn" onclick="declineTerms()">
+                    <i class="fas fa-times"></i>
+                    Não Aceito
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

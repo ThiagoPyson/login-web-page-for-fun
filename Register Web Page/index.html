@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Test Fun</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="register-box">
+            <h2>Criar Conta</h2>
+            <form id="registerForm">
+                <div class="input-group">
+                    <input type="text" id="username" required>
+                    <label for="username">Nickname</label>
+                    <div class="strength-meter"></div>
+                </div>
+                
+                <div class="input-group">
+                    <input type="email" id="email" required>
+                    <label for="email">Email</label>
+                </div>
+                
+                <div class="input-group">
+                    <input type="password" id="password" required>
+                    <label for="password">Senha</label>
+                    <div class="password-requirements">
+                        <div class="requirement" data-requirement="length">8+ caracteres</div>
+                        <div class="requirement" data-requirement="uppercase">1 maiúscula</div>
+                        <div class="requirement" data-requirement="number">1 número</div>
+                        <div class="requirement" data-requirement="special">1 caractere especial</div>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <input type="password" id="confirmPassword" required>
+                    <label for="confirmPassword">Confirmar Senha</label>
+                </div>
+                <div class="terms">
+                    <label>
+                        <input type="checkbox" id="termsCheck" required>
+                        Aceito os <a href="/Register Web Page/terms/index.html" target="_blank">termos de uso</a> e 
+                        <a href="/Register Web Page/terms/index.html" target="_blank">política de privacidade</a>
+                    </label>
+                </div>
+                <button type="submit" class="register-btn">
+                    <span class="btn-text">Criar Conta</span>
+                    <div class="btn-loader"></div>
+                </button>
+
+                <div class="login-link">
+                    <p>Já tem uma conta? <a href="../index.html">Fazer login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
